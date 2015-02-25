@@ -8,6 +8,18 @@ class GameWindow < Gosu::Window
 		@duck = make_duck
 	end
 
+	def make_background
+		Background.new
+	end
+
+	def make_player
+		Entity.new
+	end
+
+	def make_duck
+		Entity.new
+	end
+
 	def update
 		update_updateables
 	end
