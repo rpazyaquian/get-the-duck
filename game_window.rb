@@ -12,11 +12,11 @@ class GameWindow < Gosu::Window
 	end
 
 	def update
-		@updateables.draw
+		update_updateables
 	end
 	
 	def draw
-		@drawables.draw
+		draw_drawables
 	end
 	
 end
