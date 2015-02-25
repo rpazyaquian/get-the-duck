@@ -3,11 +3,8 @@ require 'gosu'
 class GameWindow < Gosu::Window
 	def initialize
 		super(640, 480, false)
-		# declare background
 		@background = make_background
-		# declare player
 		@player = make_player
-		# declare duck
 		@duck = make_duck
 	end
 
@@ -15,8 +12,20 @@ class GameWindow < Gosu::Window
 		update_updateables
 	end
 	
+	def update_updateables
+		@updateables.each do |updateable|
+			updateable.update
+		end
+	end
+
 	def draw
 		draw_drawables
+	end
+
+	def draw_drawables
+		@drawables.each do |drawable|
+			drawable.draw
+		end
 	end
 	
 end
